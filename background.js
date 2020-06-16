@@ -5,7 +5,7 @@ class Background {
     }
 
     drawBackground() {
-
+        game.preloadBackgoundImages();
     }
 
 
