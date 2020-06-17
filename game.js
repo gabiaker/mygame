@@ -1,5 +1,4 @@
-console.log('game.js file is linked');
-
+console.log("game.js file is linked");
 
 class Game {
     constructor() {
