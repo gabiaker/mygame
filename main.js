@@ -10,27 +10,16 @@ function setup() {
   game.setup();
 }
 function draw() {
+  clear();
   game.drawingGame();
 }
 
-// function keyPressed() {
-//   if (keyCode == 32) {
-//     console.log(" 32 was pressed");
-//     game.player.jump();
-//     //console.log(" 32 was pressed");
-//   }
-// }
-
 function keyPressed() {
-  if (keyCode == 32) {
+  if (keyCode === 32) {
     game.player.jump();
-    //console.log(" Space-bar was pressed");
-  }
-}
-
-function keyPressed() {
-  if (keyCode == 68) {
-    game.player.moveRight();
-    
+  } else if (keyCode === 39) {
+    game.player.MoveRight();
+  } else if (keyCode === 37) {
+    game.player.MoveLeft();
   }
 }
