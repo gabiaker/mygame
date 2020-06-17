@@ -1,24 +1,14 @@
 console.log("main.js file is linked");
 
 const game = new Game();
-let img;
 
 function preload() {
-  img = loadImage("assets/background/1.jpg");
-
   game.preloadBackgoundImages();
 }
 function setup() {
   createCanvas(800, 600);
-  background(img);
-  //game.setup();
+  game.setup();
 }
 function draw() {
-  game.draw();
+  game.drawingGame();
 }
-
-//   function keyPressed() {
-//     if (keyCode == 32) {
-//       game.player.jump();
-//     }
-//   }

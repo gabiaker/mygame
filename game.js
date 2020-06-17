@@ -9,8 +9,8 @@ class Game {
 
     preloadBackgoundImages() {
         this.backgroundImgs = [
-            { src: loadImage("assets/background/1.jpg"), x: 0, speed: 0 },
-
+            { src: loadImage("assets/background/edit.png"), x: 0, speed: 0 },
+            { src: loadImage("assets/background/stars/star-png-transparent-background-6.png"), x: 0, speed: 1 },
         ];
 
         this.unicornImg = loadImage("assets/unicorn/Final/unicorn-right.gif");
@@ -18,6 +18,10 @@ class Game {
 
         
     }
+
+    setup() {
+        this.player.setupPlayer();
+      }
 
     drawingGame() {
         clear();
