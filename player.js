@@ -4,7 +4,8 @@ class Player {
         this.gravity = 0.1;
         this.speed = 0;
         this.jumps = 0;
-        this.x = 50;
+        this.x = 200;
+        this.moveRight = 0;
     }
 
     setupPlayer() {
@@ -20,13 +21,19 @@ class Player {
         if (this.jumps < 2) {
             this.speed = -5;
         }
-        //console.log("know i am jumping");
+
 
         // ANOTHER APPROACH WITHOUT THE JUMP VARIABLES
         /*  if(this.y >= height - game.playerImg.height){
             this.speed = -5;
         } */
     }
+
+    moveRight() {
+        //this.x -= 10
+        console.log(" D was pressed");
+    }
+
 
     drawingTheUnicorn() {
         //gravity pushes poor antonio down in the canvas
