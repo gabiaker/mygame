@@ -1,16 +1,18 @@
 console.log('main.js file is linked');
 
-//const game = new Game();
+// const game = new Game();
 
 function preload() {
-  let img;
-  img = loadImage("assets/background/1.jpg");
-    //game.preloadBackgoundImages();
+
+  game.preloadBackgoundImages();
   }
+
   function setup() {
     createCanvas(800, 600);
-    //game.setup();
+    game.setup();
   }
+
+
   function draw() {
     game.drawingGame();
   }

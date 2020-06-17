@@ -21,8 +21,8 @@ class Game {
     }
 
     drawingGame() {
-        //clear();
-        //frameRate(20);       
+        clear();
+        frameRate(20);       
 
         this.background.drawBackground();
         this.player.drawingTheUnicorn();
