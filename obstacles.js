@@ -5,11 +5,11 @@ class Obstacles {
         this.x = randomX;
         this.y = height;
         this.redGem = game.redGem;
-        // this.greenGem = game.greenGem;
-        // this.blueGem = game.blueGem;
-        // this.glassGem = game.glassGem;
-
-
+        this.greenGem = game.greenGem;
+        this.blueGem = game.blueGem;
+        this.glassGem = game.glassGem;
+        this.gems = [this.redGem, this.greenGem, this.blueGem, this.glassGem];
+        //this.gemsImage = gems[0];
 
 
         this.width = this.redGem.width;
@@ -46,12 +46,15 @@ class Obstacles {
         }
       }
 
+
+    
+
     drawingObstacles() {
         this.y -= 1;
         image(this.redGem, this.x, this.y, this.width, this.height);
-        // image(this.greenGem, this.x, this.y, this.width, this.height);
-        // image(this.blueGem, this.x, this.y, this.width, this.height);
-        // image(this.glassGem, this.x, this.y, this.width, this.height);
-      }
+        image(this.greenGem, this.x, this.y, this.width, this.height);
+        image(this.blueGem, this.x, this.y, this.width, this.height);
+        image(this.glassGem, this.x, this.y, this.width, this.height);
+    }
 
 }
