@@ -1,11 +1,11 @@
 console.log('player.js file is linked');
 class Player {
     constructor() {
-        this.gravity = 0.1;
+        this.gravity = 0.2;
         this.speed = 0;
         this.jumps = 0;
-        this.x = 200;
-        this.moveRight = 0;
+        this.x = 650;
+    
     }
 
     setupPlayer() {
@@ -19,7 +19,7 @@ class Player {
 
         // check how many times the player before touching the ground
         if (this.jumps < 2) {
-            this.speed = -5;
+            this.speed = -10;
         }
 
 
@@ -30,10 +30,26 @@ class Player {
     }
 
     moveRight() {
-        //this.x -= 10
-        console.log(" D was pressed");
+        if (this.x >= 10 && this.x <= 670) {                    
+            console.log('The Unicorn x-Position is:', this.x)
+            this.x += 10;
+            //this.x = 800 - (game.unicornImg.width - 1);    // My values in the if statement are hard-coded, to try to change that 
+        } else {
+            this.x += 0;
+            console.log('The Unicorn is out of the canvas', this.x)
+        }
     }
 
+    moveLeft() {
+        if (this.x > 10 && this.x >= 0) {
+            console.log('The Unicorn x-Position is:', this.x)
+            this.x -= 10;
+            //this.x = 800 - (game.unicornImg.width - 1);
+        } else {
+            this.x += 0;  // stay in the same spot - do nothing
+            console.log('The Unicorn is out of the canvas', this.x)
+        }
+    }
 
     drawingTheUnicorn() {
         //gravity pushes poor antonio down in the canvas

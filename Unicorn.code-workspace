@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../W2/W2D5/LABS/p5June-Alfonso-code"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Unicorn Game"
+	}
+}
