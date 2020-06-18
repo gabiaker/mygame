@@ -20,10 +20,10 @@ class Game {
     ];
 
     this.unicornImg = loadImage("assets/unicorn/Final/unicorn-right.gif");
-    this.redGem = loadImage("assets/gems/Final/red_34_56.png");
-    this.greenGem = loadImage("assets/gems/Final/green.jpg");
+    this.redGem = loadImage("assets/gems/Final/red.png");
+    this.greenGem = loadImage("assets/gems/Final/green.png");
     this.blueGem = loadImage("assets/gems/Final/blue.png");
-    this.glassGem = loadImage("assets/gems/Final/red_34_56.png");
+    this.glassGem = loadImage("assets/gems/Final/transparent.png");
 
     this.cloudImgs = [
       { src: loadImage("assets/Clouds/final/cloud1.jpg"), y: 100, speed: 5 },
