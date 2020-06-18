@@ -15,7 +15,10 @@ class Game {
         ];
 
         this.unicornImg = loadImage("assets/unicorn/Final/unicorn-right.gif");
-        this.gemImg = loadImage("assets/gems/Final/red.jpg");
+        this.redGem = loadImage("assets/gems/Final/red_34_56.png");
+        this.greenGem = loadImage("assets/gems/Final/green.jpg");
+        this.blueGem = loadImage("assets/gems/Final/blue.png");
+        this.glassGem = loadImage("assets/gems/Final/red_34_56.png");
 
         this.cloudImgs = [
             { src: loadImage("assets/Clouds/final/cloud1.jpg"), y: 100, speed: 5 },
@@ -50,7 +53,31 @@ class Game {
         // this.clouds.drawClouds();
         this.background.drawBackground();
         this.player.drawingTheUnicorn();
+
+        if (frameCount % 50 === 0) {
+            //random function from p5
+            let randomNumber = random(0, height - 60);
+            this.obstacles.push(new Obstacles(randomNumber));
+        }
+
+        this.obstacles.forEach((elem) => {
+            // we draw all of the obstacles
+            elem.drawingObstacles();
+            elem.checkCollision(this.player);
+          });
         
+          this.obstacles = this.obstacles.filter((obstacle) => {
+            // here we check if the collision is happening, and if it is happenind we return false to filter the obstacle :D
+            if (obstacle.checkCollision(this.player)) {
+              console.log("Collision is accured");
+              return false;
+            } else {
+              // here we keep the obstacles
+              console.log(" Not colliding");
+      
+              return true;
+            }
+          });
     
     }
 }

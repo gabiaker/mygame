@@ -28,7 +28,7 @@ class Player {
             this.speed = -5;
         } */
     }
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     moveRight() {
         if (this.x >= 10 && this.x <= 670) {                    
             console.log('The Unicorn x-Position is:', this.x)
@@ -50,6 +50,7 @@ class Player {
             console.log('The Unicorn is out of the canvas', this.x)
         }
     }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     drawingTheUnicorn() {
         //gravity pushes poor antonio down in the canvas
