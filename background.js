@@ -1,4 +1,5 @@
-console.log('background.js file is linked');
+// console.log('background.js file is linked');
+
 class Background {
     constructor() {
 
@@ -24,3 +25,6 @@ class Background {
 
     }
 }
+
+
+

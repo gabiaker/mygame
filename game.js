@@ -1,4 +1,4 @@
-console.log("game.js file is linked");
+// console.log("game.js file is linked");
 
 class Game {
   constructor() {
@@ -7,18 +7,17 @@ class Game {
     this.obstacles = [];
     this.clouds = new Clouds();
     this.score = 0;
+    this.stamina = 10;
   }
 
   preloadBackgoundImages() {
     this.backgroundImgs = [
-      { src: loadImage("assets/background/edit.png"), y: 0, speed: 2 },
-      {
-        src: loadImage("assets/background/stars/mint-background-png-4.png"),
-        y: 0,
-        speed: 1,
-      },
+      { src: loadImage("assets/background/edit.png"), y: 0, speed: 4 },
+      { src: loadImage("assets/background/stars/mint-background-png-4.png"), y: 0, speed: 3, }
     ];
 
+    this.gameIntro = loadImage("assets/background/game-intro.jpg");
+    this.gameOver = loadImage("assets/background/game-over.png");
     this.unicornImg = loadImage("assets/unicorn/Final/unicorn-right.gif");
     this.redGem = loadImage("assets/gems/Final/red.png");
     this.greenGem = loadImage("assets/gems/Final/green.png");
@@ -43,7 +42,7 @@ class Game {
       // { src: loadImage("assets/Clouds/final/cloud15.jpg"), y: 0, speed: 5 },
       // { src: loadImage("assets/Clouds/final/cloud16.jpg"), y: 0, speed: 5 }
     ];
-    console.log("cloud image is preloaded");
+    // console.log("cloud image is preloaded");
   }
 
   setup() {
@@ -67,22 +66,27 @@ class Game {
     this.obstacles.forEach((elem) => {
       // we draw all of the obstacles
       elem.drawingObstacles();
-      elem.checkCollision(this.player);
+      elem.checkRedCollision(this.player);
+      elem.checkGreenCollision(this.player);
     });
-
+    
+    // here we check if the collision is happening, and if it is happenind we return false to filter the obstacle :D
     this.obstacles = this.obstacles.filter((obstacle) => {
-      // here we check if the collision is happening, and if it is happenind we return false to filter the obstacle :D
-      if (obstacle.checkCollision(this.player)) {
-        console.log("Collision is accured");
-        this.score += obstacle.gem.score;
-        console.log("SCORE!", this.score);
+      if (obstacle.checkRedCollision(this.player)) {
+        console.log("Red Gem is Collected");
+        this.stamina -= 10;
+        console.log("Oh, noooooo", this.stamina);
+          if (this.stamina == 0) {
+            gameState = gameState + 2;
+          }
         return false;
       } else {
         // here we keep the obstacles
-        console.log(" Not colliding");
+        // console.log(" Not colliding");
 
         return true;
       }
     });
+
   }
 }

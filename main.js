@@ -1,6 +1,8 @@
-console.log("main.js file is linked");
+//console.log("main.js file is linked");
 
 const game = new Game();
+
+let gameState = 1;
 
 //let img;
 
@@ -16,20 +18,34 @@ function setup() {
 
 
 function draw() {
-  game.drawingGame();
+  if (gameState == 1) {
+    image(game.gameIntro, 0, 0, 800, 600);
+
+  } else if (gameState == 0) {
+      game.drawingGame();
+
+  } else if (gameState !=0) {
+      image(game.gameOver, 0, 0, width, height);
+  }
+}
   //clouds.drawClouds()
 
-}
+
 
 function keyPressed() {
+
   if (keyCode == 68 || keyCode == 39) {
-    console.log(' D is pressed')
     game.player.moveRight();
-  } else if (keyCode == 32) {
-    console.log(" Space-bar was pressed");
+
+  } else if (keyCode == 32 || keyCode == 87) {
     game.player.jump();
+
   } else if (keyCode == 65 || keyCode == 37) {
-    console.log(' A is pressed')
     game.player.moveLeft();
+  }
+
+  if (gameState != 0 && keyCode == 32) {
+    gameState = 0;
+    game.stamina = 10;
   }
 }

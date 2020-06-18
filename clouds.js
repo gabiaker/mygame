@@ -1,4 +1,4 @@
-console.log ('clouds.js is linked')
+// console.log ('clouds.js is linked')
 
 class Clouds {
     constructor() {
@@ -8,7 +8,7 @@ class Clouds {
     
     drawClouds() {
 
-        
+
         image(game.cloudImgs, this.x, this.y)
     }
 }
