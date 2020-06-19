@@ -13,6 +13,7 @@ class Game {
   preloadBackgoundImages() {
     this.backgroundImgs = [
       { src: loadImage("assets/background/edit.png"), y: 0, speed: 4 },
+      //{ src: loadImage("assets/background/edit.png"), y: 0, speed: 4 },
       { src: loadImage("assets/background/stars/mint-background-png-4.png"), y: 0, speed: 3, }
     ];
 
