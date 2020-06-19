@@ -28,23 +28,18 @@ function draw() {
   } else if (gameState !=0) {
       image(game.gameOver, 0, 0, width, height);
   }
+
+  if (keyIsDown(68) || keyIsDown(39)) {
+    game.player.moveRight();
+  } else if (keyIsDown(65) || keyIsDown(37)) {
+    game.player.moveLeft();
+  } else if (keyIsDown(32) || keyIsDown(87)) {
+    game.player.jump();
+  }
 }
 
 function keyPressed() {
-
-  if (keyCode == 68 || keyCode == 39) {
-    // unicorn image is facing Right 
-    game.player.moveRight();
-
-  } else if (keyCode == 32 || keyCode == 87) {
-    game.player.jump();
-
-  } else if (keyCode == 65 || keyCode == 37) {
-    // unicorn image is facing Right 
-    game.player.moveLeft();
-  }
-
-  if (gameState != 0 && keyCode == 32) {
+  if (gameState != 0 && keyCode == 13) {
     gameState = 0;
     game.stamina = 100;
   }
