@@ -19,12 +19,17 @@ class Background {
             if (elem.y <= -height) {
                 elem.y = 0;
             }
-
         });
-
-
     }
-}
+
+    drawGameStatus() {
+        image(game.gameLifeStatus, 30, 30, width, height);
+        image(game.gameScoreStatus, 530, 30, width, height);
+    }
+    
+
+}   
+
 
 
 
